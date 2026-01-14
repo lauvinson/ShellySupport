@@ -1,0 +1,151 @@
+<html class="light" lang="zh-CN"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>在线客服</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Playfair+Display:ital,wght@0,400;0,600;1,400&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#498d8b",
+                        "background-light": "#f8f7f7",
+                        "background-dark": "#1c1f21",
+                        "card-blue": "#EBF1F5",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"],
+                        "serif": ["Playfair Display", "serif"],
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        .bubble-left { border-bottom-left-radius: 4px; }
+        .bubble-right { border-bottom-right-radius: 4px; }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#131616] dark:text-gray-100 antialiased h-screen flex flex-col overflow-hidden selection:bg-primary/30">
+<header class="bg-white/80 dark:bg-background-dark/80 backdrop-blur-md shadow-sm z-20 flex-none pb-4 pt-12 px-4 border-b border-gray-200 dark:border-gray-700">
+<div class="flex items-center justify-between">
+<a class="text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 rounded-full p-2 transition-colors" href="index.html">
+<span class="material-symbols-outlined text-2xl">arrow_back_ios_new</span>
+</a>
+<div class="flex flex-col items-center">
+<h1 class="text-lg font-bold tracking-tight">在线客服</h1>
+<div class="flex items-center gap-1.5 mt-1">
+<span class="w-2 h-2 rounded-full bg-green-400 border border-white/50"></span>
+<span class="text-gray-500 dark:text-gray-400 text-xs font-medium">在线</span>
+</div>
+</div>
+<button class="text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 rounded-full p-2 transition-colors">
+<span class="material-symbols-outlined text-2xl">more_horiz</span>
+</button>
+</div>
+</header>
+<main class="flex-1 overflow-y-auto p-5 space-y-6" id="chat-container">
+<div class="flex justify-center my-2">
+<span class="text-xs text-gray-400 bg-gray-200 dark:bg-gray-800/50 px-3 py-1 rounded-full">今天 10:23</span>
+</div>
+<div class="flex items-end gap-3 group">
+<div class="flex-none">
+<div class="w-10 h-10 rounded-full bg-card-blue dark:bg-gray-700 shadow-sm flex items-center justify-center overflow-hidden border-2 border-white dark:border-gray-600">
+<span class="font-bold text-primary dark:text-teal-300 text-base">S</span>
+</div>
+</div>
+<div class="flex flex-col gap-1 max-w-[75%]">
+<div class="bg-white dark:bg-gray-800/50 text-gray-700 dark:text-gray-200 p-4 rounded-xl bubble-left shadow-sm border border-gray-100 dark:border-gray-700">
+<p class="text-sm leading-relaxed">你好！我是 Shelly 智能助手。有什么我可以帮您的吗？☁️</p>
+</div>
+</div>
+</div>
+<div class="flex items-end gap-3 flex-row-reverse group">
+<div class="flex-none">
+<div class="w-10 h-10 rounded-full bg-gray-200 dark:bg-gray-600 flex items-center justify-center overflow-hidden border-2 border-white dark:border-gray-600">
+<span class="material-symbols-outlined text-gray-500 dark:text-gray-400 text-2xl">person</span>
+</div>
+</div>
+<div class="flex flex-col gap-1 max-w-[75%] items-end">
+<div class="bg-primary text-white p-4 rounded-xl bubble-right shadow-md">
+<p class="text-sm leading-relaxed">我想咨询一下关于 Shelly 1PM 的接线问题。</p>
+</div>
+<span class="text-[11px] text-gray-400 pr-1 mt-1">10:24</span>
+</div>
+</div>
+<div class="flex items-end gap-3 group">
+<div class="flex-none">
+<div class="w-10 h-10 rounded-full bg-card-blue dark:bg-gray-700 shadow-sm flex items-center justify-center overflow-hidden border-2 border-white dark:border-gray-600">
+<span class="font-bold text-primary dark:text-teal-300 text-base">S</span>
+</div>
+</div>
+<div class="flex flex-col gap-1 max-w-[75%]">
+<div class="bg-white dark:bg-gray-800/50 text-gray-700 dark:text-gray-200 p-4 rounded-xl bubble-left shadow-sm border border-gray-100 dark:border-gray-700">
+<p class="text-sm leading-relaxed">没问题。请问您是在安装过程中遇到了什么具体的困难？或者您可以发一张目前的接线照片给我。</p>
+</div>
+<span class="text-[11px] text-gray-400 pl-1 mt-1">10:24</span>
+</div>
+</div>
+<div class="flex items-end gap-3 flex-row-reverse group">
+<div class="flex-none">
+<div class="w-10 h-10 rounded-full bg-gray-200 dark:bg-gray-600 flex items-center justify-center overflow-hidden border-2 border-white dark:border-gray-600">
+<span class="material-symbols-outlined text-gray-500 dark:text-gray-400 text-2xl">person</span>
+</div>
+</div>
+<div class="flex flex-col gap-1 max-w-[75%] items-end">
+<div class="bg-white dark:bg-gray-800/50 p-1.5 rounded-xl bubble-right shadow-md border border-gray-100 dark:border-gray-700">
+<img alt="接线图照片" class="rounded-lg object-cover w-48 h-32 opacity-90 hover:opacity-100 transition-opacity cursor-pointer" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3xdrNS5lA8TnMK5zFTt399cwtaAk1zACNB3pM3FeKhQb3Nj0QHQcouGnoLFMy5UohPkrjwC8oY-FxNg3JdaTik2oTTMSot_M6N2BAoXzfplndOP9j_vB-zTiwB3tq2VjR6_JcRQ6WxKVJIu6Z3vpBf9HLKxYCddhV9nu1sdn-FijA4euAk_WW_vWRJFhMrbrCQZ4JUV48A7ub7SrTsS_SbE_gI86JL2dCFiPblReymF2b-OeU-tD1Xurhnmj_oeFOhIFIjfsD0vqy"/>
+</div>
+<span class="text-[11px] text-gray-400 pr-1 mt-1">10:25</span>
+</div>
+</div>
+<div class="flex items-end gap-3 group">
+<div class="flex-none">
+<div class="w-10 h-10 rounded-full bg-card-blue dark:bg-gray-700 shadow-sm flex items-center justify-center overflow-hidden border-2 border-white dark:border-gray-600">
+<span class="font-bold text-primary dark:text-teal-300 text-base">S</span>
+</div>
+</div>
+<div class="bg-white dark:bg-gray-800/50 border border-gray-100 dark:border-gray-700 p-4 rounded-xl bubble-left shadow-sm flex items-center gap-2">
+<span class="w-1.5 h-1.5 bg-gray-300 dark:bg-gray-500 rounded-full animate-bounce"></span>
+<span class="w-1.5 h-1.5 bg-gray-300 dark:bg-gray-500 rounded-full animate-bounce" style="animation-delay: 0.1s;"></span>
+<span class="w-1.5 h-1.5 bg-gray-300 dark:bg-gray-500 rounded-full animate-bounce" style="animation-delay: 0.2s;"></span>
+</div>
+</div>
+<div class="h-4"></div>
+</main>
+<footer class="bg-white/80 dark:bg-background-dark/80 border-t border-gray-200 dark:border-gray-700 p-4 pb-safe-bottom flex-none z-20 backdrop-blur-md">
+<div class="flex gap-2 mb-3 overflow-x-auto pb-1 no-scrollbar">
+<button class="flex-none text-xs font-medium bg-gray-100 dark:bg-gray-700 text-primary dark:text-teal-300 px-3.5 py-2 rounded-lg border border-gray-200 dark:border-gray-600 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">
+                如何重置设备?
+            </button>
+<button class="flex-none text-xs font-medium bg-gray-100 dark:bg-gray-700 text-primary dark:text-teal-300 px-3.5 py-2 rounded-lg border border-gray-200 dark:border-gray-600 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">
+                App 连接不上
+            </button>
+<button class="flex-none text-xs font-medium bg-gray-100 dark:bg-gray-700 text-primary dark:text-teal-300 px-3.5 py-2 rounded-lg border border-gray-200 dark:border-gray-600 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">
+                人工客服
+            </button>
+</div>
+<div class="flex items-center gap-3">
+<button class="flex-none text-gray-400 dark:text-gray-400 hover:text-primary transition-colors focus:outline-none">
+<span class="material-symbols-outlined text-3xl">add_circle</span>
+</button>
+<div class="flex-1 relative">
+<input class="w-full bg-gray-100 dark:bg-gray-800/50 text-gray-800 dark:text-white rounded-full py-3 px-5 focus:outline-none focus:ring-2 focus:ring-primary/50 border-none placeholder-gray-400 text-sm shadow-inner" placeholder="请输入消息..." type="text"/>
+<button class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-primary dark:hover:text-white transition-colors">
+<span class="material-symbols-outlined text-2xl">sentiment_satisfied</span>
+</button>
+</div>
+<button class="flex-none bg-primary hover:bg-primary/90 text-white rounded-full p-3 shadow-lg shadow-primary/20 hover:shadow-primary/30 transition-all focus:outline-none group active:scale-95">
+<span class="material-symbols-outlined text-2xl group-hover:translate-x-0.5 transition-transform">send</span>
+</button>
+</div>
+</footer>
+</body></html>

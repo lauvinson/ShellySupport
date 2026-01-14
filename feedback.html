@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html class="light" lang="zh-CN">
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>建议反馈</title>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Playfair+Display:ital,wght@0,400;0,600;1,400&amp;display=swap" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#498d8b",
+                        "background-light": "#f8f7f7",
+                        "background-dark": "#1c1f21",
+                        "card-sage": "#EFF5F4",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"],
+                        "serif": ["Playfair Display", "serif"],
+                    },
+                    borderRadius: { "DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px" },
+                    boxShadow: {
+                        "soft": "0 4px 20px -2px rgba(0, 0, 0, 0.05)",
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        .emoji-btn { transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+        .emoji-btn:active { transform: scale(0.9); }
+        .emoji-btn.selected { transform: scale(1.15); color: #498d8b; }
+        .emoji-btn.selected span { font-variation-settings: 'FILL' 1; }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#131616] dark:text-gray-100 min-h-screen flex flex-col overflow-hidden selection:bg-primary/30">
+    <header class="relative z-20 px-6 pt-14 pb-4 flex items-center justify-between">
+        <a href="index.html" class="w-10 h-10 flex items-center justify-center rounded-full bg-white/50 dark:bg-black/20 backdrop-blur-sm text-gray-800 dark:text-white hover:bg-white/80 dark:hover:bg-black/30 transition-colors">
+            <span class="material-symbols-outlined text-[22px]">arrow_back_ios_new</span>
+        </a>
+        <h1 class="text-xl font-bold tracking-tight text-gray-900 dark:text-white">建议反馈</h1>
+        <div class="w-10"></div>
+    </header>
+    <main class="relative z-10 flex-1 overflow-y-auto no-scrollbar pb-32 px-6 space-y-8 pt-4">
+        <section class="animate-fade-in-up" style="animation-delay: 0.1s;">
+            <h2 class="text-sm font-medium text-gray-500 dark:text-gray-400 mb-4 px-1">您对我们的服务满意吗？</h2>
+            <div class="bg-white dark:bg-[#2c3033] rounded-2xl p-5 shadow-soft flex justify-around items-center gap-2">
+                <button class="emoji-btn group text-gray-400 hover:text-red-500" onclick="selectEmoji(this)">
+                    <span class="material-symbols-outlined text-4xl group-hover:scale-110 transition-transform">sentiment_very_dissatisfied</span>
+                </button>
+                <button class="emoji-btn group text-gray-400 hover:text-orange-400" onclick="selectEmoji(this)">
+                    <span class="material-symbols-outlined text-4xl group-hover:scale-110 transition-transform">sentiment_dissatisfied</span>
+                </button>
+                <button class="emoji-btn group text-gray-400 hover:text-amber-400" onclick="selectEmoji(this)">
+                    <span class="material-symbols-outlined text-4xl group-hover:scale-110 transition-transform">sentiment_neutral</span>
+                </button>
+                <button class="emoji-btn group text-gray-400 hover:text-primary" onclick="selectEmoji(this)">
+                    <span class="material-symbols-outlined text-4xl group-hover:scale-110 transition-transform">sentiment_satisfied</span>
+                </button>
+                <button class="emoji-btn selected group text-primary" onclick="selectEmoji(this)">
+                    <span class="material-symbols-outlined text-4xl group-hover:scale-110 transition-transform">sentiment_very_satisfied</span>
+                </button>
+            </div>
+        </section>
+        <section class="animate-fade-in-up" style="animation-delay: 0.2s;">
+            <div class="relative bg-white dark:bg-[#2c3033] rounded-2xl shadow-soft group">
+                <textarea class="w-full h-48 p-5 bg-transparent border-none resize-none focus:ring-0 text-base leading-relaxed placeholder:text-gray-400 dark:placeholder:text-gray-500 dark:text-white" placeholder="请分享您的想法..."></textarea>
+                <div class="absolute bottom-4 right-4 text-xs text-gray-400 dark:text-gray-500 font-medium">0/500</div>
+            </div>
+        </section>
+        <section class="animate-fade-in-up" style="animation-delay: 0.3s;">
+            <h2 class="text-sm font-medium text-gray-500 dark:text-gray-400 mb-4 px-1">添加图片 <span class="text-xs opacity-70">(选填)</span></h2>
+            <div class="flex gap-4">
+                <button class="flex-shrink-0 w-24 h-24 rounded-xl border-2 border-dashed border-gray-300 dark:border-gray-600 flex flex-col items-center justify-center gap-1 text-gray-400 hover:border-primary hover:text-primary hover:bg-primary/5 transition-all group">
+                    <span class="material-symbols-outlined text-3xl">add_photo_alternate</span>
+                    <span class="text-[11px] font-medium">上传图片</span>
+                </button>
+            </div>
+        </section>
+        <div class="pt-4 pb-4 animate-fade-in-up" style="animation-delay: 0.4s;">
+            <button class="w-full bg-primary hover:opacity-90 text-white font-bold py-4 rounded-full shadow-lg shadow-primary/30 transform active:scale-[0.98] transition-all flex items-center justify-center gap-2">
+                <span>提交反馈</span>
+                <span class="material-symbols-outlined text-xl">send</span>
+            </button>
+        </div>
+    </main>
+    <nav class="fixed bottom-0 left-0 w-full glass-nav border-t border-gray-100 dark:border-gray-800 pb-safe pt-1 px-6 z-50 rounded-t-2xl shadow-[0_-5px_20px_rgba(0,0,0,0.02)]">
+        <div class="flex justify-between items-center h-[72px] max-w-sm mx-auto">
+            <a href="index.html" class="flex flex-col items-center justify-center gap-1.5 w-16 h-full text-gray-400 hover:text-gray-600 dark:text-gray-500 dark:hover:text-gray-300 transition-colors group">
+                <span class="material-symbols-outlined group-hover:-translate-y-0.5 transition-transform duration-200">home</span>
+                <span class="text-[10px] font-medium tracking-wide">首页</span>
+            </a>
+            <a href="history.html" class="flex flex-col items-center justify-center gap-1.5 w-16 h-full text-gray-400 hover:text-gray-600 dark:text-gray-500 dark:hover:text-gray-300 transition-colors group">
+                <span class="material-symbols-outlined group-hover:-translate-y-0.5 transition-transform duration-200">history</span>
+                <span class="text-[10px] font-medium tracking-wide">记录</span>
+            </a>
+            <a href="profile.html" class="flex flex-col items-center justify-center gap-1.5 w-16 h-full text-gray-400 hover:text-gray-600 dark:text-gray-500 dark:hover:text-gray-300 transition-colors group">
+                <span class="material-symbols-outlined group-hover:-translate-y-0.5 transition-transform duration-200">person</span>
+                <span class="text-[10px] font-medium tracking-wide">我的</span>
+            </a>
+        </div>
+        <div class="h-4 w-full"></div>
+    </nav>
+    <script>
+        function selectEmoji(btn) {
+            const parent = btn.parentElement;
+            const siblings = parent.getElementsByClassName('emoji-btn');
+            for (let sibling of siblings) {
+                sibling.classList.remove('selected');
+                sibling.classList.remove('text-primary');
+            }
+            btn.classList.add('selected');
+        }
+    </script>
+</body>
+</html>

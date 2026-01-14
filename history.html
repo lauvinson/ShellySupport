@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html class="light" lang="zh-CN">
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>服务记录</title>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Playfair+Display:ital,wght@0,400;0,600;1,400&amp;display=swap" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#498d8b",
+                        "background-light": "#f8f7f7",
+                        "background-dark": "#1c1f21",
+                        "status-blue": "#4D89DE",
+                        "status-grey": "#8E8E93",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"],
+                        "serif": ["Playfair Display", "serif"],
+                    },
+                    borderRadius: { "DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px" },
+                    boxShadow: {
+                        'soft': '0 4px 20px -2px rgba(0, 0, 0, 0.05)',
+                        'card': '0 2px 12px -2px rgba(0, 0, 0, 0.04), 0 1px 3px rgba(0,0,0,0.03)',
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+        }
+        .dark .glass-nav {
+            background: rgba(28, 31, 33, 0.85);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-gray-800 dark:text-gray-100 font-display flex flex-col">
+    <div class="relative w-full max-w-md mx-auto min-h-screen bg-background-light dark:bg-background-dark flex flex-col">
+        <header class="px-6 pt-14 pb-6">
+            <h1 class="text-3xl font-serif font-medium text-gray-900 dark:text-white">服务记录</h1>
+            <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">您的支持历史</p>
+        </header>
+        <main class="flex-1 overflow-y-auto no-scrollbar px-6 pb-28 space-y-4">
+            <div class="group bg-white dark:bg-[#2c3033] rounded-xl p-5 shadow-card hover:shadow-soft transition-all duration-300 border border-transparent hover:border-primary/20 cursor-pointer relative overflow-hidden">
+                <div class="absolute left-0 top-0 bottom-0 w-1.5 bg-status-blue rounded-l-xl"></div>
+                <div class="flex justify-between items-start mb-2">
+                    <div class="flex items-center gap-3">
+                        <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-blue-100 dark:bg-blue-900/30 text-status-blue">处理中</span>
+                        <span class="text-xs font-mono text-gray-400 dark:text-gray-500">#T-29381</span>
+                    </div>
+                    <span class="material-symbols-outlined text-gray-300 dark:text-gray-600 group-hover:text-primary transition-colors">chevron_right</span>
+                </div>
+                <h3 class="text-lg font-bold text-gray-800 dark:text-gray-100 mb-1">无法连接到 Wi-Fi</h3>
+                <div class="flex items-center gap-2 mt-3 text-sm text-gray-500 dark:text-gray-400">
+                    <span class="material-symbols-outlined text-base">calendar_today</span>
+                    <p class="font-medium">2023年10月24日</p>
+                </div>
+            </div>
+            <div class="group bg-white dark:bg-[#2c3033] rounded-xl p-5 shadow-card hover:shadow-soft transition-all duration-300 border border-transparent hover:border-primary/20 cursor-pointer relative overflow-hidden">
+                <div class="absolute left-0 top-0 bottom-0 w-1.5 bg-status-grey rounded-l-xl"></div>
+                <div class="flex justify-between items-start mb-2">
+                    <div class="flex items-center gap-3">
+                        <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-gray-100 dark:bg-gray-700/50 text-status-grey">已完成</span>
+                        <span class="text-xs font-mono text-gray-400 dark:text-gray-500">#T-29100</span>
+                    </div>
+                    <span class="material-symbols-outlined text-gray-300 dark:text-gray-600 group-hover:text-primary transition-colors">chevron_right</span>
+                </div>
+                <h3 class="text-lg font-bold text-gray-800 dark:text-gray-100 mb-1">更换设备申请</h3>
+                <div class="flex items-center gap-2 mt-3 text-sm text-gray-500 dark:text-gray-400">
+                    <span class="material-symbols-outlined text-base">check_circle</span>
+                    <p class="font-medium">2023年10月15日</p>
+                </div>
+            </div>
+            <div class="group bg-white dark:bg-[#2c3033] rounded-xl p-5 shadow-card hover:shadow-soft transition-all duration-300 border border-transparent hover:border-primary/20 cursor-pointer relative overflow-hidden">
+                <div class="absolute left-0 top-0 bottom-0 w-1.5 bg-primary rounded-l-xl"></div>
+                <div class="flex justify-between items-start mb-2">
+                    <div class="flex items-center gap-3">
+                        <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-primary/10 dark:bg-primary/20 text-primary">待反馈</span>
+                        <span class="text-xs font-mono text-gray-400 dark:text-gray-500">#T-28992</span>
+                    </div>
+                    <span class="material-symbols-outlined text-gray-300 dark:text-gray-600 group-hover:text-primary transition-colors">chevron_right</span>
+                </div>
+                <h3 class="text-lg font-bold text-gray-800 dark:text-gray-100 mb-1">账户验证问题</h3>
+                <div class="flex items-center gap-2 mt-3 text-sm text-gray-500 dark:text-gray-400">
+                    <span class="material-symbols-outlined text-base">error_outline</span>
+                    <p class="font-medium">2023年10月10日</p>
+                </div>
+            </div>
+        </main>
+        <nav class="fixed bottom-0 left-0 w-full glass-nav border-t border-gray-100 dark:border-gray-800 pb-safe pt-1 px-6 z-50 rounded-t-2xl shadow-[0_-5px_20px_rgba(0,0,0,0.02)]">
+            <div class="flex justify-between items-center h-[72px] max-w-sm mx-auto">
+                <a href="index.html" class="flex flex-col items-center justify-center gap-1.5 w-16 h-full text-gray-400 hover:text-gray-600 dark:text-gray-500 dark:hover:text-gray-300 transition-colors group">
+                    <span class="material-symbols-outlined group-hover:-translate-y-0.5 transition-transform duration-200">home</span>
+                    <span class="text-[10px] font-medium tracking-wide">首页</span>
+                </a>
+                <a href="history.html" class="flex flex-col items-center justify-center gap-1.5 w-16 h-full text-primary relative group">
+                    <div class="absolute -top-[1px] w-8 h-[3px] bg-primary rounded-b-full"></div>
+                    <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">history</span>
+                    <span class="text-[10px] font-bold tracking-wide">记录</span>
+                </a>
+                <a href="profile.html" class="flex flex-col items-center justify-center gap-1.5 w-16 h-full text-gray-400 hover:text-gray-600 dark:text-gray-500 dark:hover:text-gray-300 transition-colors group">
+                    <span class="material-symbols-outlined group-hover:-translate-y-0.5 transition-transform duration-200">person</span>
+                    <span class="text-[10px] font-medium tracking-wide">我的</span>
+                </a>
+            </div>
+            <div class="h-4 w-full"></div>
+        </nav>
+    </div>
+</body>
+</html>
