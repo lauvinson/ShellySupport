@@ -13,7 +13,7 @@
             theme: {
                 extend: {
                     colors: {
-                        "primary": "#498d8b",
+                        "primary": "#4594D1",
                         "background-light": "#f8f7f7",
                         "background-dark": "#1c1f21",
                         "card-blue": "#EBF1F5",
@@ -134,18 +134,80 @@
             </button>
 </div>
 <div class="flex items-center gap-3">
-<button class="flex-none text-gray-400 dark:text-gray-400 hover:text-primary transition-colors focus:outline-none">
-<span class="material-symbols-outlined text-3xl">add_circle</span>
-</button>
-<div class="flex-1 relative">
-<input class="w-full bg-gray-100 dark:bg-gray-800/50 text-gray-800 dark:text-white rounded-full py-3 px-5 focus:outline-none focus:ring-2 focus:ring-primary/50 border-none placeholder-gray-400 text-sm shadow-inner" placeholder="请输入消息..." type="text"/>
-<button class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-primary dark:hover:text-white transition-colors">
-<span class="material-symbols-outlined text-2xl">sentiment_satisfied</span>
-</button>
-</div>
-<button class="flex-none bg-primary hover:bg-primary/90 text-white rounded-full p-3 shadow-lg shadow-primary/20 hover:shadow-primary/30 transition-all focus:outline-none group active:scale-95">
-<span class="material-symbols-outlined text-2xl group-hover:translate-x-0.5 transition-transform">send</span>
-</button>
+    <button class="flex-none text-gray-400 dark:text-gray-400 hover:text-primary transition-colors focus:outline-none">
+        <span class="material-symbols-outlined text-3xl">add_circle</span>
+    </button>
+    <div class="flex-1 relative">
+        <input id="chat-input" class="w-full bg-gray-100 dark:bg-gray-800/50 text-gray-800 dark:text-white rounded-full py-3 px-5 focus:outline-none focus:ring-2 focus:ring-primary/50 border-none placeholder-gray-400 text-sm shadow-inner" placeholder="请输入消息..." type="text" />
+        <button class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-primary dark:hover:text-white transition-colors">
+            <span class="material-symbols-outlined text-2xl">sentiment_satisfied</span>
+        </button>
+    </div>
+    <button id="send-button" class="flex-none bg-primary hover:bg-primary/90 text-white rounded-full p-3 shadow-lg shadow-primary/20 hover:shadow-primary/30 transition-all focus:outline-none group active:scale-95">
+        <span class="material-symbols-outlined text-2xl group-hover:translate-x-0.5 transition-transform">send</span>
+    </button>
 </div>
 </footer>
-</body></html>
+
+<script>
+    const chatContainer = document.getElementById('chat-container');
+    const chatInput = document.getElementById('chat-input');
+    const sendButton = document.getElementById('send-button');
+
+    function addUserMessage(message) {
+        const messageElement = document.createElement('div');
+        messageElement.classList.add('flex', 'items-end', 'gap-3', 'flex-row-reverse', 'group');
+        messageElement.innerHTML = `
+            <div class="flex-none">
+                <div class="w-10 h-10 rounded-full bg-gray-200 dark:bg-gray-600 flex items-center justify-center overflow-hidden border-2 border-white dark:border-gray-600">
+                    <span class="material-symbols-outlined text-gray-500 dark:text-gray-400 text-2xl">person</span>
+                </div>
+            </div>
+            <div class="flex flex-col gap-1 max-w-[75%] items-end">
+                <div class="bg-primary text-white p-4 rounded-xl bubble-right shadow-md">
+                    <p class="text-sm leading-relaxed">${message}</p>
+                </div>
+            </div>
+        `;
+        chatContainer.appendChild(messageElement);
+        chatContainer.scrollTop = chatContainer.scrollHeight;
+    }
+
+    function addSupportMessage(message) {
+        const messageElement = document.createElement('div');
+        messageElement.classList.add('flex', 'items-end', 'gap-3', 'group');
+        messageElement.innerHTML = `
+            <div class="flex-none">
+                <div class="w-10 h-10 rounded-full bg-card-blue dark:bg-gray-700 shadow-sm flex items-center justify-center overflow-hidden border-2 border-white dark:border-gray-600">
+                    <span class="font-bold text-primary dark:text-teal-300 text-base">S</span>
+                </div>
+            </div>
+            <div class="flex flex-col gap-1 max-w-[75%]">
+                <div class="bg-white dark:bg-gray-800/50 text-gray-700 dark:text-gray-200 p-4 rounded-xl bubble-left shadow-sm border border-gray-100 dark:border-gray-700">
+                    <p class="text-sm leading-relaxed">${message}</p>
+                </div>
+            </div>
+        `;
+        chatContainer.appendChild(messageElement);
+        chatContainer.scrollTop = chatContainer.scrollHeight;
+    }
+
+    sendButton.addEventListener('click', () => {
+        const message = chatInput.value.trim();
+        if (message) {
+            addUserMessage(message);
+            chatInput.value = '';
+            setTimeout(() => {
+                addSupportMessage('感谢您的反馈，我们会尽快处理。');
+            }, 1000);
+        }
+    });
+
+    chatInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+            sendButton.click();
+        }
+    });
+</script>
+</body>
+</html>

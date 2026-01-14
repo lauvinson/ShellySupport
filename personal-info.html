@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>个人信息</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#4594D1",
+                        "background-light": "#f8f7f7",
+                        "background-dark": "#1c1f21",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen flex flex-col">
+    <header class="flex items-center justify-between px-6 pt-14 pb-6 bg-background-light dark:bg-background-dark sticky top-0 z-10">
+        <a href="profile.html" class="w-10 h-10 flex items-center justify-center rounded-full bg-white/50 dark:bg-black/20 backdrop-blur-sm text-gray-800 dark:text-white hover:bg-white/80 dark:hover:bg-black/30 transition-colors">
+            <span class="material-symbols-outlined text-[22px]">arrow_back_ios_new</span>
+        </a>
+        <h1 class="text-xl font-bold tracking-tight text-gray-900 dark:text-white">个人信息</h1>
+        <div class="w-10"></div>
+    </header>
+    <main class="flex-1 px-6 pb-10">
+        <div class="flex flex-col gap-4">
+            <div class="w-full group bg-white dark:bg-white/5 rounded-2xl p-5 flex items-center justify-between">
+                <span class="text-base font-semibold text-slate-800 dark:text-slate-100">头像</span>
+                <div class="flex items-center gap-3">
+                    <div class="w-12 h-12 rounded-full bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDE_clzgM07yN2WZN9V98ifugah0bVeXqa2zi_q_hokDWrYFknrxW-EGAWw107J3EsD9vaCx6aw91_JwY2rxoMOEabr9HALxvWRvv_HcOdKQLvd4moEqmHTRGdx9jgYI65-Fowp5lgc6OlK_Y33vKZpHqvejKLvwE7PxSepk16o7esigNQMZtHP8_yvfdkiKDW1yfK3royZ3eEdpRqP1G4mDPksHsNbo_9A_0mKWeD3kpjSmp3phUgVcjyfiFkoohUlr7dbXdTJRPG2');"></div>
+                    <span class="material-symbols-outlined text-slate-300 dark:text-slate-600 text-[20px]">chevron_right</span>
+                </div>
+            </div>
+            <div class="w-full group bg-white dark:bg-white/5 rounded-2xl p-5 flex items-center justify-between">
+                <span class="text-base font-semibold text-slate-800 dark:text-slate-100">昵称</span>
+                <div class="flex items-center gap-3">
+                    <span class="text-slate-500 dark:text-slate-400">微信用户</span>
+                    <span class="material-symbols-outlined text-slate-300 dark:text-slate-600 text-[20px]">chevron_right</span>
+                </div>
+            </div>
+            <div class="w-full group bg-white dark:bg-white/5 rounded-2xl p-5 flex items-center justify-between">
+                <span class="text-base font-semibold text-slate-800 dark:text-slate-100">ID</span>
+                <span class="text-slate-500 dark:text-slate-400">883920</span>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

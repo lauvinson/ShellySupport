@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>隐私政策</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#4594D1",
+                        "background-light": "#f8f7f7",
+                        "background-dark": "#1c1f21",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen flex flex-col">
+    <header class="flex items-center justify-between px-6 pt-14 pb-6 bg-background-light dark:bg-background-dark sticky top-0 z-10">
+        <a href="profile.html" class="w-10 h-10 flex items-center justify-center rounded-full bg-white/50 dark:bg-black/20 backdrop-blur-sm text-gray-800 dark:text-white hover:bg-white/80 dark:hover:bg-black/30 transition-colors">
+            <span class="material-symbols-outlined text-[22px]">arrow_back_ios_new</span>
+        </a>
+        <h1 class="text-xl font-bold tracking-tight text-gray-900 dark:text-white">隐私政策</h1>
+        <div class="w-10"></div>
+    </header>
+    <main class="flex-1 px-6 pb-10">
+        <div class="prose dark:prose-invert">
+            <p>我们致力于保护您的个人信息安全。本隐私政策旨在说明我们如何收集、使用、共享和保护您的个人信息。</p>
+            <h2>信息收集</h2>
+            <p>我们可能会收集您在使用我们服务时提供的信息，例如您的姓名、联系方式等。</p>
+            <h2>信息使用</h2>
+            <p>我们收集的信息将用于为您提供更好的服务，例如处理您的请求、与您沟通等。</p>
+        </div>
+    </main>
+</body>
+</html>
